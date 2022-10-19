@@ -1,0 +1,951 @@
+<html><head><title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="cache-control" content="max-age=0">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT">
+<meta http-equiv="pragma" content="no-cache">
+<link rel="stylesheet" type="text/css" href="style/polsat.css">
+
+
+<script type="text/javascript" src="/lang/b28n.js"></script>
+ 
+<style>
+td.bodysettingmenu {
+	 text-align:center;
+	 background:url(graphics/left_menu.png) no-repeat;
+	 width:184px;
+	 height:26px;
+}
+	
+a.bodysettingmenu {
+	font-family: Verdana;
+	font-size:11px;
+	color: #333300;
+	font-weight: bold;
+	text-decoration:none;
+}	
+
+.a_normal {
+	font-family: Verdana;
+	font-size:11px;
+	color: #333300;
+	font-weight: bold;
+	text-decoration:none;
+	text-align:center;
+	width:160px;
+	height:26px;
+}
+
+.a_active {
+	font-family: Verdana;
+	font-size:11px;
+	color: #FFFFFF;
+	font-weight: bold;
+	text-decoration:none;
+	text-align:center;
+	width:160px;
+	height:26px;
+}
+
+.default_a {font-family: Verdana; font-size:11px; color: #FFFFFF; font-weight: bold; text-decoration:none;}
+.default_bg {background:url(graphics/left_submenu_active.png) no-repeat; width:184px;height:26px; text-align:center;}
+</style>
+
+<script language="JavaScript" type="text/javascript">
+Butterlate.setTextDomain("admin");
+
+var isMenuLock = 0;
+var defaultMenuBg='url( graphics/left_menu.png)';
+var down="";
+var a_down="";
+var customer = "pldt";
+var customerID = "99";
+var customer5G ="1";
+var supprot_openvpn ="0";
+var simpleQos = "1";
+var dynamicQos = "0"
+var igmpb = "1";
+var support_mesh = '1';
+var guestwifi = "0"
+var guestlimit = "0"
+var vlanbuilt = "1";
+var vlanIsolate_built = "1";
+var WiFi_VLANbuilt = "1";
+var vlan_dhcpbuilt = "1";
+var pldt_iptvbuilt = "1";
+
+function go(zz) {
+	if(!isMenuLock)
+		top.webbody.bodysetting_content.location=zz+'?'+Math.random();
+}
+
+
+function resetall()
+{
+	document.getElementById("menu1").style.background=defaultMenuBg;
+	document.getElementById("menu2").style.background=defaultMenuBg;
+	document.getElementById("menu_id4Wifi").style.background=defaultMenuBg;
+	//document.getElementById("menu3").style.background=defaultMenuBg;
+	//document.getElementById("menu35G").style.background=defaultMenuBg;
+	document.getElementById("menu3_mesh_5G").style.background=defaultMenuBg;
+	document.getElementById("menu_mesh_tplg").style.background=defaultMenuBg;
+	document.getElementById("menu4").style.background=defaultMenuBg;
+	document.getElementById("menu45G").style.background=defaultMenuBg;
+	document.getElementById("menu5").style.background=defaultMenuBg;
+	document.getElementById("menu5G").style.background=defaultMenuBg;
+	document.getElementById("menu6").style.background=defaultMenuBg;
+	document.getElementById("menuParentCtrl").style.background=defaultMenuBg;
+	document.getElementById("menu34b").style.background=defaultMenuBg;
+	document.getElementById("menu29").style.background=defaultMenuBg;
+	document.getElementById("menu36").style.background=defaultMenuBg;
+	document.getElementById("menu7").style.background=defaultMenuBg;
+	document.getElementById("menu8").style.background=defaultMenuBg;
+	document.getElementById("menu9").style.background=defaultMenuBg;
+	document.getElementById("menu10").style.background=defaultMenuBg;
+	document.getElementById("menu11").style.background=defaultMenuBg;
+	document.getElementById("menu13").style.background=defaultMenuBg;
+	document.getElementById("menu14").style.background=defaultMenuBg;
+	document.getElementById("menu15").style.background=defaultMenuBg;
+	document.getElementById("menu16").style.background=defaultMenuBg;
+	document.getElementById("menu17").style.background=defaultMenuBg;
+	document.getElementById("menu18").style.background=defaultMenuBg;
+	document.getElementById("menu19").style.background=defaultMenuBg;
+	document.getElementById("menu34").style.background=defaultMenuBg;
+	document.getElementById("menu46").style.background=defaultMenuBg;
+	document.getElementById("menu20").style.background=defaultMenuBg;
+	document.getElementById("menu21").style.background=defaultMenuBg;
+	document.getElementById("menu22").style.background=defaultMenuBg;
+	document.getElementById("menu23").style.background=defaultMenuBg;
+	document.getElementById("menu24").style.background=defaultMenuBg;
+	document.getElementById("menu25").style.background=defaultMenuBg;
+	document.getElementById("menu26").style.background=defaultMenuBg;
+	document.getElementById("menu27").style.background=defaultMenuBg;
+	document.getElementById("menu44").style.background=defaultMenuBg;
+	document.getElementById("menu_vpn_gre").style.background=defaultMenuBg;
+	document.getElementById("menu30b").style.background=defaultMenuBg;
+	document.getElementById("menu31").style.background=defaultMenuBg;
+	document.getElementById("menu32").style.background=defaultMenuBg;
+	document.getElementById("menu38").style.background=defaultMenuBg;
+	document.getElementById("menu37").style.background=defaultMenuBg;
+	document.getElementById("menu33").style.background=defaultMenuBg;
+	document.getElementById("menu39").style.background=defaultMenuBg;
+	document.getElementById("menu40").style.background=defaultMenuBg;
+	document.getElementById("menu_vlan_dhcp").style.background=defaultMenuBg;
+	document.getElementById("menu_vlanIsolate").style.background=defaultMenuBg;
+	document.getElementById("menu_pldt_iptv").style.background=defaultMenuBg;
+}
+
+function resetfontall()
+{
+	document.getElementById("a1").className='a_normal';
+	document.getElementById("a2").className='a_normal';
+	document.getElementById("a_id4Wifi").className='a_normal';
+	//document.getElementById("a3").className='a_normal';
+	//document.getElementById("a35G").className='a_normal';
+	document.getElementById("a3_mesh_5G").className='a_normal';
+	document.getElementById("a_mesh_tplg").className='a_normal';
+	document.getElementById("a4").className='a_normal';
+	document.getElementById("a45G").className='a_normal';
+	document.getElementById("a5").className='a_normal';
+	document.getElementById("a5g").className='a_normal';
+	document.getElementById("a6").className='a_normal';
+	document.getElementById("parentCtrl").className='a_normal';
+	document.getElementById("a34b").className='a_normal';
+	document.getElementById("a7").className='a_normal';
+	document.getElementById("a8").className='a_normal';
+	document.getElementById("a9").className='a_normal';
+	document.getElementById("a10").className='a_normal';
+	document.getElementById("a11").className='a_normal';
+	document.getElementById("a13").className='a_normal';
+	document.getElementById("a14").className='a_normal';
+	document.getElementById("a15").className='a_normal';
+	document.getElementById("a16").className='a_normal';
+	document.getElementById("a17").className='a_normal';
+	document.getElementById("a18").className='a_normal';
+	document.getElementById("a19").className='a_normal';
+	document.getElementById("a34").className='a_normal';
+	document.getElementById("a46").className='a_normal';
+	document.getElementById("a20").className='a_normal';
+	document.getElementById("a21").className='a_normal';
+	document.getElementById("a22").className='a_normal';
+	document.getElementById("a23").className='a_normal';
+	document.getElementById("a24").className='a_normal';
+	document.getElementById("a25").className='a_normal';
+	document.getElementById("a26").className='a_normal';
+	document.getElementById("a27").className='a_normal';
+	document.getElementById("a29").className='a_normal';
+	document.getElementById("a38").className='a_normal';
+	document.getElementById("a36").className='a_normal';
+	document.getElementById("a37").className='a_normal';
+	document.getElementById("a30b").className='a_normal';
+	document.getElementById("a31").className='a_normal';
+	document.getElementById("a32").className='a_normal';
+	document.getElementById("a33").className='a_normal';
+	document.getElementById("a44").className='a_normal';
+	document.getElementById("a_vpn_gre").className='a_normal';
+	document.getElementById("a39").className='a_normal';
+	document.getElementById("a40").className='a_normal';
+	document.getElementById("a_vlan_dhcp").className='a_normal';
+	document.getElementById("a_vlanIsolate").className='a_normal';
+	document.getElementById("a_pldtIptv").className='a_normal';
+}
+
+function atelDown(obj)
+{
+	down=obj.id;
+	resetall();
+	resetfontall();
+	obj.style.background='url( graphics/left_submenu_active.png)';
+	document.getElementById("menu0").style.background='url( graphics/left_menu_active.png)';
+	document.getElementById("menu12").style.background='url( graphics/left_menu_active.png)';
+	document.getElementById("menu30").style.background='url( graphics/left_menu_active.png)';
+}
+
+function initValue()
+{
+	initTranslation();
+	document.getElementById("menu0").style.background='url( graphics/left_menu_active.png)';
+	document.getElementById("menu12").style.background='url( graphics/left_menu_active.png)';
+	document.getElementById("menu30").style.background='url( graphics/left_menu_active.png)';
+	document.getElementById("a0").className='a_active';
+	document.getElementById("a12").className='a_active';
+	document.getElementById("a30").className='a_active';
+	document.getElementById("menu1").style.display = "";
+	document.getElementById("menu2").style.display = "";
+	document.getElementById("menu_id4Wifi").style.display = "";
+	//document.getElementById("menu3").style.display = "";
+	if(customerID == "1"){		///customerID  1  POLSAT CUSTOMER
+		
+	}else{
+		
+	}
+    if(guestwifi != "1")
+		document.getElementById("menu4").style.display = "";
+	if(customer5G == "1")
+	{
+		//document.getElementById("menu35G").style.display = "";
+		document.getElementById("menu45G").style.display = "";
+		document.getElementById("menu5G").style.display = "";
+	}
+	else
+	{
+		//document.getElementById("menu35G").style.display = "none";
+		document.getElementById("menu45G").style.display = "none";
+		document.getElementById("menu5G").style.display = "none";
+	}
+	if (support_mesh == "1")
+	{
+		document.getElementById("menu3_mesh_5G").style.display = "";
+		document.getElementById("menu_mesh_tplg").style.display = "none";
+	}
+	else
+	{
+		document.getElementById("menu3_mesh_5G").style.display = "none";
+		document.getElementById("menu_mesh_tplg").style.display = "none";
+	}
+	
+	document.getElementById("menu4").style.display = "";
+
+	document.getElementById("menu5").style.display = "";
+	document.getElementById("menu7").style.display = "none";
+	document.getElementById("menu8").style.display = "none";
+	document.getElementById("menu9").style.display = "";
+	document.getElementById("menu10").style.display = "none";
+	document.getElementById("menu13").style.display = "";
+	document.getElementById("menu14").style.display = "none";
+	document.getElementById("menu15").style.display = "none";
+	document.getElementById("menu16").style.display = "none";
+	document.getElementById("menu17").style.display = "none";
+	document.getElementById("menu18").style.display = "none";
+	document.getElementById("menu19").style.display = "none";
+	document.getElementById("menu34").style.display = "none";
+	document.getElementById("menu46").style.display = "none";
+	document.getElementById("menu20").style.display = "none";
+	document.getElementById("menu21").style.display = "none";
+	document.getElementById("menu22").style.display = "none";
+	document.getElementById("menu23").style.display = "none";
+	document.getElementById("menu24").style.display = "none";
+	document.getElementById("menu25").style.display = "none";
+	document.getElementById("menu26").style.display = "none";
+	document.getElementById("menu27").style.display = "none";
+	document.getElementById("menu6").style.display = "none";
+	document.getElementById("menuParentCtrl").style.display = "none";
+	document.getElementById("menu34b").style.display = "none";
+	document.getElementById("menu29").style.display = "none";
+	document.getElementById("menu38").style.display = "none";
+	document.getElementById("menu36").style.display = "none";
+    document.getElementById("menu37").style.display = "none";
+	document.getElementById("menu44").style.display = "none";
+	document.getElementById("menu_vpn_gre").style.display = "none";
+	document.getElementById("menu30b").style.display = "none";
+	document.getElementById("menu31").style.display = "none";
+	document.getElementById("menu32").style.display = "none";
+	document.getElementById("menu33").style.display = "none";
+	document.getElementById("menu39").style.display = "none";
+	document.getElementById("menu40").style.display = "none";
+	document.getElementById("menu_vlan_dhcp").style.display = "none";
+	document.getElementById("menu_vlanIsolate").style.display = "none";
+	document.getElementById("menu_pldt_iptv").style.display = "none";
+	
+	document.getElementById("menu1").className='default_bg';
+	document.getElementById("a1").className='default_a';
+	document.getElementById("headmenu38").style.display = "block";
+	if(guestwifi == "1")
+	document.getElementById("headmenu37").style.display = "block";
+}
+
+function initTranslation()
+{
+	var  e = document.getElementById("menubasic");
+	e.innerHTML = _("setting menu0");
+	e = document.getElementById("menupassword");
+	e.innerHTML = _("setting menu1");
+	e = document.getElementById("menulan");
+	e.innerHTML = _("setting menu2");
+	//e = document.getElementById("menuwifi");
+	//e.innerHTML = _("setting menu3");
+	//e = document.getElementById("menuwifi5G");
+	//e.innerHTML = _("setting 5g menu3");
+	e = document.getElementById("menumesh5G");
+	e.innerHTML = _("setting 5g menu3_mesh_5G");
+	e = document.getElementById("menumeshtplg");
+	e.innerHTML = _("setting mesh tplg");
+	e = document.getElementById("menuwifisecurity");
+	e.innerHTML = _("setting menu4");
+	e = document.getElementById("menuwifisecurity5G");
+	e.innerHTML = _("setting menu45G");
+	e = document.getElementById("menuwps");
+	e.innerHTML = _("setting menu5");
+	e = document.getElementById("menuwps5g");
+	e.innerHTML = _("setting menu5g");
+	e = document.getElementById("menuntp");
+	e.innerHTML = _("setting menu6");	
+	e = document.getElementById("menufirmwareupload");
+	e.innerHTML = _("setting menu7");
+	e = document.getElementById("menuremoteupload");
+	e.innerHTML = _("setting menu8");
+	e = document.getElementById("menufactoryrestore");
+	e.innerHTML = _("setting menu9");
+	e = document.getElementById("menuodu");
+	e.innerHTML = _("setting menu10");	
+	e = document.getElementById("menuAutoupload");
+	e.innerHTML = _("setting menu11");	
+	e = document.getElementById("menuadvance");
+	e.innerHTML = _("setting menu12");
+	e = document.getElementById("menuwirelessstatistics");
+	e.innerHTML = _("setting menu13");
+	e = document.getElementById("menurouting");
+	e.innerHTML = _("setting menu14");
+	e = document.getElementById("menuMACIPPortfilter");
+	e.innerHTML = _("setting menu15");
+	e = document.getElementById("menuportforwarding");
+	e.innerHTML = _("setting menu16");
+	e = document.getElementById("menudmz");
+	e.innerHTML = _("setting menu17");
+	e = document.getElementById("menuIPMACBinding");
+	e.innerHTML = _("setting menu18");
+	e = document.getElementById("menusyssecurity");
+	e.innerHTML = _("setting menu19");
+	e = document.getElementById("menuContentFiltering");
+	e.innerHTML = _("setting menu20");
+	e = document.getElementById("menuddns");
+	e.innerHTML = _("setting menu21");
+	e = document.getElementById("menuBackupRestore");
+	e.innerHTML = _("setting menu22");
+	e = document.getElementById("menuReboot");
+	e.innerHTML = _("setting menu23");
+	e = document.getElementById("menuDiagnostic");
+	e.innerHTML = _("setting menu24");
+	e = document.getElementById("menusyslog");
+	e.innerHTML = _("setting menu25");
+	e = document.getElementById("menuMACfilter");
+	e.innerHTML = _("setting menu26");			
+	e = document.getElementById("menuvirtualserver");
+	e.innerHTML = _("setting menu27");
+	e = document.getElementById("menuvpnpassthrough");
+	e.innerHTML = _("setting menu44");
+	e = document.getElementById("menu_vpn_gre_span_id");
+	e.innerHTML = _("setting menu_vpn_gre");
+	e = document.getElementById("menulte");
+	e.innerHTML = _("setting menu30");
+	e = document.getElementById("lteapnmenu");
+	e.innerHTML = _("lte apn menu");
+	e = document.getElementById("ltebandmenu");
+	e.innerHTML = _("lte band menu");
+	e = document.getElementById("ltenetworkmenu");
+	e.innerHTML = _("lte network menu");
+	e = document.getElementById("ltepinmenu");
+	e.innerHTML = _("lte pin menu");
+}
+
+function clickbasicmenu()
+{
+	document.getElementById("menu1").style.display = "";
+	document.getElementById("menu2").style.display = "";
+	//document.getElementById("menu3").style.display = "";
+	document.getElementById("menu_id4Wifi").style.display = "";
+	if(customer5G == "1"){		///customerID  1  POLSAT CUSTOMER
+		//document.getElementById("menu35G").style.display = "";
+		document.getElementById("menu45G").style.display = "";
+		document.getElementById("menu5G").style.display = "";
+	}else{
+		//document.getElementById("menu35G").style.display = "none";
+		document.getElementById("menu45G").style.display = "none";
+		document.getElementById("menu5G").style.display = "none";
+	}
+	if (support_mesh == "1")
+	{
+		document.getElementById("menu3_mesh_5G").style.display = "";
+		document.getElementById("menu_mesh_tplg").style.display = "none";
+	}
+	else
+	{
+		document.getElementById("menu3_mesh_5G").style.display = "none";
+		document.getElementById("menu_mesh_tplg").style.display = "none";
+	}
+	//if(supprot_openvpn == "1")
+	document.getElementById("menu34b").style.display = "none";
+    if(guestwifi != "1")
+		document.getElementById("menu4").style.display = "";
+    if(guestlimit == "1")
+		document.getElementById("menu41").style.display = "none";
+	document.getElementById("menu5").style.display = "";
+	document.getElementById("menu7").style.display = "none";
+	document.getElementById("menu8").style.display = "none";
+	document.getElementById("menu9").style.display = "none";
+	document.getElementById("menu10").style.display = "none";
+	document.getElementById("menu13").style.display = "";
+	document.getElementById("menu14").style.display = "none";
+	document.getElementById("menu15").style.display = "none";
+	document.getElementById("menu16").style.display = "none";
+	document.getElementById("menu17").style.display = "none";
+	document.getElementById("menu18").style.display = "none";
+	document.getElementById("menu19").style.display = "none";
+
+	document.getElementById("menu34").style.display = "none";
+	document.getElementById("menu46").style.display = "none";
+	document.getElementById("menu20").style.display = "none";
+	document.getElementById("menu21").style.display = "none";
+	document.getElementById("menu22").style.display = "none";
+	document.getElementById("menu23").style.display = "none";
+	document.getElementById("menu24").style.display = "none";
+	document.getElementById("menu25").style.display = "none";
+	document.getElementById("menu26").style.display = "none";
+	document.getElementById("menu27").style.display = "none";
+	document.getElementById("menu6").style.display = "none";
+	document.getElementById("menuParentCtrl").style.display = "none";
+	document.getElementById("menu29").style.display = "none";
+	document.getElementById("menu38").style.display = "none";
+	document.getElementById("menu36").style.display = "none";
+	document.getElementById("menu37").style.display = "none";
+	document.getElementById("menu44").style.display = "none";
+	document.getElementById("menu_vpn_gre").style.display = "none";
+	document.getElementById("menu31").style.display = "none";
+	document.getElementById("menu30b").style.display = "none";
+	document.getElementById("menu32").style.display = "none";
+	document.getElementById("menu33").style.display = "none";
+	document.getElementById("menu39").style.display = "none";
+	document.getElementById("menu40").style.display = "none";
+	document.getElementById("menu_vlan_dhcp").style.display = "none";
+	document.getElementById("menu_vlanIsolate").style.display = "none";
+	document.getElementById("menu_pldt_iptv").style.display = "none";
+	
+	javascript:go('./bodysetting_adm.shtml');
+	document.getElementById("menu1").style.background='url( graphics/left_submenu_active.png)';
+	document.getElementById("a1").className='a_active';
+	document.getElementById("a0").className='a_active';
+}
+function clickadmmenu()
+{
+	javascript:go('./bodysetting_adm.shtml');
+	document.getElementById("a1").className='a_active';
+}
+function clicklanmenu()
+{
+	javascript:go('./bodysetting_lan.shtml');
+	document.getElementById("a2").className='a_active';
+}
+function clickid4wifimenu()
+{
+	javascript:go('./bodysetting_id4_wifi.shtml');
+	document.getElementById("a_id4Wifi").className='a_active';
+}
+function clickwifimenu()
+{
+	javascript:go('./bodysetting_wifi.shtml');
+	document.getElementById("a3").className='a_active';
+}
+function clickwifimenu5G()
+{
+	javascript:go('./bodysetting_wifi_5G.shtml');
+	document.getElementById("a35G").className='a_active';
+}
+function clickmeshmenu5G()
+{
+	javascript:go('./bodysetting_mesh.shtml');
+	document.getElementById("a3_mesh_5G").className='a_active';
+}
+function clickmeshmenutplg()
+{
+	javascript:go('./bodysetting_mesh_tplg.shtml');
+	document.getElementById("a_mesh_tplg").className='a_active';
+}
+function clicksecuritymenu()
+{
+	javascript:go('./multi_ssid.shtml');
+	document.getElementById("a4").className='a_active';
+}
+function clickguestlimitmenu()
+{
+	javascript:go('../wireless/ra1stainfo.shtml');
+	document.getElementById("a41").className='a_active';
+}
+function clicksecurity5Gmenu()
+{
+	javascript:go('./multi_ssid_5g.shtml');
+	document.getElementById("a45G").className='a_active';
+}
+function clickwpsmenu()
+{
+	javascript:go('./bodysetting_wps.shtml');
+	document.getElementById("a5").className='a_active';
+}
+function clickwps5gmenu()
+{
+	javascript:go('./bodysetting_wps_5g.shtml');
+	document.getElementById("a5g").className='a_active';
+}
+function clickntpmenu()
+{
+	javascript:go('./bodysetting_ntp.shtml');
+	document.getElementById("a6").className='a_active';
+}
+function clickParentCtrlMenu()
+{
+	javascript:go('./bodysetting_parent_ctrl.shtml');
+	document.getElementById("parentCtrl").className='a_active';
+}
+function clickopenvpnmenu()
+{
+	if(supprot_openvpn == "1")
+		javascript:go('./bodysetting_openvpn.shtml');
+	if(supprot_openvpn == "2")
+		javascript:go('./bodysetting_multi_openvpn.shtml');
+	
+	document.getElementById("a34b").className='a_active';
+}
+function clickqosmenu()
+{
+	javascript:go('./bodysetting_simpleQos.shtml');
+	document.getElementById("a29").className='a_active';
+}
+function clickdynamicqosmenu()
+{
+	javascript:go('./bodysetting_dynamicQos.shtml');
+	document.getElementById("a36").className='a_active';
+}
+function clickupdatefwmenu()
+{
+	javascript:go('./bodysetting_updatefw.shtml');
+	document.getElementById("a7").className='a_active';
+}
+function clickremoteupdatemenu()
+{
+	javascript:go('./bodysetting_remoteupdate.shtml');
+	document.getElementById("a8").className='a_active';
+}
+function clickfactorymenu()
+{
+	javascript:go('./bodysetting_factory.shtml');
+	document.getElementById("a9").className='a_active';
+}
+function clickoduclick()
+{
+	javascript:go('./bodysetting_ODUConfig.shtml');
+	document.getElementById("a10").className='a_active';
+}
+function clickAutouploadclick()
+{
+	javascript:go('./bodysetting_autoupload.shtml');
+	document.getElementById("a11").className='a_active';
+}
+
+function clickadvancemenu()
+{
+	document.getElementById("menu1").style.display = "none";
+	document.getElementById("menu2").style.display = "none";
+	document.getElementById("menu_id4Wifi").style.display = "none";
+	//document.getElementById("menu3").style.display = "none";
+	//document.getElementById("menu35G").style.display = "none";	
+	document.getElementById("menu3_mesh_5G").style.display = "none";
+	document.getElementById("menu_mesh_tplg").style.display = "none";
+	document.getElementById("menu4").style.display = "none";
+	document.getElementById("menu41").style.display = "none";
+	document.getElementById("menu45G").style.display = "none";
+	document.getElementById("menu5").style.display = "none";
+	document.getElementById("menu5G").style.display = "none";
+	document.getElementById("menu7").style.display = "none";
+	document.getElementById("menu8").style.display = "none";
+	document.getElementById("menu9").style.display = "none";
+	document.getElementById("menu10").style.display = "none"
+	document.getElementById("menu13").style.display = "none";
+	document.getElementById("menu14").style.display = "";
+	document.getElementById("menu15").style.display = "none";
+	//if((customer == "polsat") || (customer == "plus"))
+	//{
+	//	document.getElementById("menu16").style.display = "";
+	//	document.getElementById("menu27").style.display = "none";
+	//	dument.getElementById("menu44").style.display = "none";
+	//	dument.getElementById("menu_vpn_gre").style.display = "none";
+	//}
+	//else
+	//{
+	document.getElementById("menu16").style.display = "none";
+	document.getElementById("menu27").style.display = "none";
+	document.getElementById("menu44").style.display = "none";
+	document.getElementById("menu_vpn_gre").style.display = "";
+	//}
+	document.getElementById("menu17").style.display = "none";
+	document.getElementById("menu18").style.display = "";
+	document.getElementById("menu19").style.display = "none";
+
+	document.getElementById("menu34").style.display = "none";
+	if(igmpb == "1")
+	document.getElementById("menu46").style.display = "none";
+	document.getElementById("menu20").style.display = "none";
+	document.getElementById("menu21").style.display = "none";
+	document.getElementById("menu22").style.display = "none";
+	document.getElementById("menu23").style.display = "";
+	document.getElementById("menu24").style.display = "none";
+	document.getElementById("menu25").style.display = "";
+	document.getElementById("menu26").style.display = "none";
+	if(vlanbuilt == "1")
+		document.getElementById("menu39").style.display = "none";//vlan
+	if(vlanIsolate_built == "1")
+		document.getElementById("menu_vlanIsolate").style.display = "none";//vlan Isolation
+	if(WiFi_VLANbuilt == "1")
+		document.getElementById("menu40").style.display = "none";//vlan-wifi isolate
+	if(vlan_dhcpbuilt == "1")
+		document.getElementById("menu_vlan_dhcp").style.display = "none";//vlan's DHCP settings
+	if(pldt_iptvbuilt == "1")
+		document.getElementById("menu_pldt_iptv").style.display = "none";
+	if(customerID != 1)
+	document.getElementById("menu38").style.display = "none";
+	else
+	document.getElementById("menu38").style.display = "none";	
+
+	if(guestwifi == "1")
+	document.getElementById("menu37").style.display = "";
+	document.getElementById("menu6").style.display = "none";
+	document.getElementById("menuParentCtrl").style.display = "";
+	if(supprot_openvpn == "1"  ||  supprot_openvpn == "2")
+		document.getElementById("menu34b").style.display = "none";
+	else
+		document.getElementById("menu34b").style.display = "none";	
+        if(simpleQos == "1"){
+                if(dynamicQos == "1"){
+                        document.getElementById("menu36").style.display = "";
+                        document.getElementById("menu29").style.display = "none";
+                }else{
+                        document.getElementById("menu29").style.display = "none";
+                        document.getElementById("menu36").style.display = "none";
+                }
+        }else{
+                document.getElementById("menu29").style.display = "none";
+                document.getElementById("menu36").style.display = "none";
+        }
+
+	document.getElementById("menu31").style.display = "none";
+	document.getElementById("menu30b").style.display = "none";
+	document.getElementById("menu32").style.display = "none";
+	document.getElementById("menu33").style.display = "none";
+	
+	javascript:go('./bodysetting_parent_ctrl.shtml');
+	document.getElementById("menu26").style.background='url( graphics/left_submenu_active.png)';
+	document.getElementById("a26").className='a_active';
+	document.getElementById("a12").className='a_active';
+}
+function clickstainfomenu()
+{
+	javascript:go('../wireless/stainfo.shtml');
+	document.getElementById("a13").className='a_active';
+}
+function clickroutingmenu()
+{
+	javascript:go('../internet/routing.shtml');
+	document.getElementById("a14").className='a_active';
+}
+function clickportfilteringmenu()
+{
+	javascript:go('../firewall/port_filtering.shtml');
+	document.getElementById("a15").className='a_active';
+}
+function clickportforwardmenu()
+{
+	javascript:go('../firewall/port_forward.shtml');
+	document.getElementById("a16").className='a_active';
+}
+function clickvirtualservermenu()
+{
+	javascript:go('../firewall/virtual_server.shtml');
+	document.getElementById("a27").className='a_active';
+}
+function clickdmzmenu()
+{
+	javascript:go('../firewall/DMZ.shtml');
+	document.getElementById("a17").className='a_active';
+}
+function clickipmacbindingmenu()
+{
+	javascript:go('../firewall/ipmac_binding.shtml');
+	document.getElementById("a18").className='a_active';
+}
+function clicksyssecuritymenu()
+{
+	javascript:go('../firewall/system_firewall.shtml');
+	document.getElementById("a19").className='a_active';
+}
+function clicksysUPNPmenu()
+{
+	javascript:go('../firewall/system_firewall_upnp.shtml');
+	document.getElementById("a34").className='a_active';
+}
+function clicksysIGMPmenu()
+{
+	javascript:go('../idu/bodysetting_igmp.shtml');
+	document.getElementById("a46").className='a_active';
+}
+function clickcontentfilteringmenu()
+{
+	javascript:go('../firewall/content_filtering.shtml');
+	document.getElementById("a20").className='a_active';
+}
+function clickddnsmenu()
+{
+	javascript:go('../adm/ddns.shtml');
+	document.getElementById("a21").className='a_active';
+}
+function clicksettingsmenu()
+{
+	javascript:go('../adm/settings.shtml');
+	document.getElementById("a22").className='a_active';
+}
+function clickrebootmenu()
+{
+	javascript:go('/idu/reboot.shtml');
+	document.getElementById("a23").className='a_active';
+}
+function clickdiagnosticmenu()
+{
+	javascript:go('../adm/diagnostic.shtml');
+	document.getElementById("a24").className='a_active';
+}
+function clicksyslogmenu()
+{
+	javascript:go('../adm/syslog.shtml');
+	document.getElementById("a25").className='a_active';
+}
+function clickmacfilteringmenu()
+{
+	javascript:go('../firewall/mac_filtering.shtml');
+	document.getElementById("a26").className='a_active';
+}
+
+function clickltemenu()
+{
+	document.getElementById("menu1").style.display = "none";
+	document.getElementById("menu2").style.display = "none";
+	document.getElementById("menu_id4Wifi").style.display = "none";
+	//document.getElementById("menu3").style.display = "none";
+	//document.getElementById("menu35G").style.display = "none";
+	document.getElementById("menu3_mesh_5G").style.display = "none";
+	document.getElementById("menu_mesh_tplg").style.display = "none";
+	document.getElementById("menu4").style.display = "none";
+	document.getElementById("menu41").style.display = "none";
+	document.getElementById("menu45G").style.display = "none";
+	document.getElementById("menu5").style.display = "none";
+	document.getElementById("menu5G").style.display = "none";
+	document.getElementById("menu6").style.display = "none";
+	document.getElementById("menuParentCtrl").style.display = "none";
+	document.getElementById("menu34b").style.display = "none";
+	document.getElementById("menu7").style.display = "none";
+	document.getElementById("menu8").style.display = "none";
+	document.getElementById("menu9").style.display = "none";
+	document.getElementById("menu10").style.display = "none"
+	document.getElementById("menu13").style.display = "none";
+	document.getElementById("menu14").style.display = "none";
+	document.getElementById("menu15").style.display = "none";
+	document.getElementById("menu16").style.display = "none";
+	document.getElementById("menu17").style.display = "none";
+	document.getElementById("menu18").style.display = "none";
+	document.getElementById("menu19").style.display = "none";
+	document.getElementById("menu34").style.display = "none";
+	document.getElementById("menu46").style.display = "none";
+	document.getElementById("menu20").style.display = "none";
+	document.getElementById("menu21").style.display = "none";
+	document.getElementById("menu22").style.display = "none";
+	document.getElementById("menu23").style.display = "none";
+	document.getElementById("menu24").style.display = "none";
+	document.getElementById("menu25").style.display = "none";
+	document.getElementById("menu26").style.display = "none";
+	document.getElementById("menu27").style.display = "none";
+	document.getElementById("menu29").style.display = "none";
+	document.getElementById("menu38").style.display = "none";
+	document.getElementById("menu36").style.display = "none";
+	document.getElementById("menu37").style.display = "none";
+	document.getElementById("menu44").style.display = "none";
+	document.getElementById("menu_vpn_gre").style.display = "none";
+	document.getElementById("menu39").style.display = "none";
+	document.getElementById("menu40").style.display = "none";
+	document.getElementById("menu_vlan_dhcp").style.display = "none";
+	document.getElementById("menu_vlanIsolate").style.display = "none";
+	document.getElementById("menu_pldt_iptv").style.display = "none";
+	document.getElementById("menu31").style.display = "none";
+	document.getElementById("menu30b").style.display = "none";
+	document.getElementById("menu32").style.display = "";
+	document.getElementById("menu33").style.display = "none";
+	javascript:go('./bodylte_selnetwork.shtml');
+	document.getElementById("menu30b").style.background='url( graphics/left_submenu_active.png)';
+	document.getElementById("a30").className='a_active';
+	document.getElementById("a30b").className='a_active';
+}
+
+function clickbandmenu()
+{
+	javascript:go('./bodylte_band.shtml');
+	document.getElementById("a30b").className='a_active';
+}
+function clickapnmenu()
+{
+	javascript:go('./bodylte_apn.shtml');
+	document.getElementById("a31").className='a_active';
+}
+
+
+function clicksetwifiguestmenu()
+{
+
+	javascript:go('./bodysetting_wifi_guest.shtml');
+	document.getElementById("a37").className='a_active';
+}
+function clicksetConManagementmenu()
+{
+
+	javascript:go('./bodysetting_con_management.shtml');
+	document.getElementById("a38").className='a_active';
+}
+function clicknetworkmenu()
+{
+	javascript:go('./bodylte_selnetwork.shtml');
+	document.getElementById("a32").className='a_active';
+}
+function clickpinmenu()
+{
+	javascript:go('./bodylte_pin.shtml');
+	document.getElementById("a33").className='a_active';
+}
+function clickvpnpassmenu()
+{
+	javascript:go('../internet/vpnpass.shtml');
+	document.getElementById("a44").className='a_active';
+}
+function click_vpn_gre_menu()
+{
+	javascript:go('../internet/vpn_gre.shtml');
+	document.getElementById("a_vpn_gre").className='a_active';
+}
+function clickvlanmenu()
+{
+	javascript:go('../vlan/vlan_settings.shtml');
+	document.getElementById("a39").className='a_active';
+}
+function clickwifi_vlanmenu()
+{
+	javascript:go('../vlan/vlan_WiFi_isolate.shtml');
+	document.getElementById("a40").className='a_active';
+}
+function clickvlan_dhcpmenu()
+{
+	javascript:go('../vlan/vlan_dhcp.shtml');
+	document.getElementById("a_vlan_dhcp").className='a_active';
+}
+function clickvlan_isolatemenu()
+{
+	javascript:go('../vlan/vlan_isolate.shtml');
+	document.getElementById("a_vlanIsolate").className='a_active';
+}
+function clickpldt_iptvmenu()
+{
+	javascript:go('../vlan/pldt_iptv.shtml');
+	document.getElementById("a_pldtIptv").className='a_active';
+}
+</script>
+</head>
+
+
+
+<!--     body      -->
+<body onload="initValue()" marginwidth="70" marginheight="0" data-new-gr-c-s-check-loaded="14.1084.0" data-gr-ext-installed="">
+
+<table border="0" cellpadding="0" cellspacing="0" style="cursor:pointer;" id="tableall" name="tableall">
+	<tbody><tr><td id="menu0" class="bodysettingmenu" onmousedown="atelDown(this);clickbasicmenu();"><a id="a0" class="bodysettingmenu"><span id="menubasic">Basic Settings</span></a></td></tr>
+	<tr><td id="menu1" class="bodysettingmenu" onmousedown="atelDown(this);clickadmmenu();"><a id="a1" class="bodysettingmenu"><span id="menupassword">Device Settings</span></a></td></tr>
+	<tr><td id="menu2" class="bodysettingmenu" onmousedown="atelDown(this);clicklanmenu()"><a id="a2" class="bodysettingmenu"><span id="menulan">LAN Settings</span></a></td></tr>
+	<tr><td id="menu_id4Wifi" class="bodysettingmenu" onmousedown="atelDown(this);clickid4wifimenu()"><a id="a_id4Wifi" class="bodysettingmenu"><span id="menu_id4Wifi">WiFi Settings</span></a></td></tr>
+	<!--<tr><td id="menu3" class="bodysettingmenu" onmousedown="atelDown(this);clickwifimenu()"><a id="a3" class="bodysettingmenu"><span id="menuwifi">WiFi Settings</span></a></td></tr>
+	<tr><td id="menu35G" class="bodysettingmenu" onmousedown="atelDown(this);clickwifimenu5G()"><a id="a35G" class="bodysettingmenu"><span id="menuwifi5G">WiFi 5G Settings</span></a></td></tr>-->
+	<tr><td id="menu3_mesh_5G" class="bodysettingmenu" onmousedown="atelDown(this);clickmeshmenu5G()"><a id="a3_mesh_5G" class="bodysettingmenu"><span id="menumesh5G">Mesh Settings</span></a></td></tr>
+	<tr><td id="menu_mesh_tplg" class="bodysettingmenu" onmousedown="atelDown(this);clickmeshmenutplg()"><a id="a_mesh_tplg" class="bodysettingmenu"><span id="menumeshtplg">Mesh Topology</span></a></td></tr>
+	<tr><td id="menu4" class="bodysettingmenu" onmousedown="atelDown(this);clicksecuritymenu()"><a id="a4" class="bodysettingmenu"><span id="menuwifisecurity">Multiple SSID setting </span></a></td></tr>
+	<tr style="display:none"><td id="menu41" class="bodysettingmenu" onmousedown="atelDown(this);clickguestlimitmenu()"><a id="a41" class="bodysettingmenu"><span>Guest Limit setting </span></a></td></tr>
+	<tr style="display:none"><td id="menu45G" class="bodysettingmenu" onmousedown="atelDown(this);clicksecurity5Gmenu()"><a id="a45G" class="bodysettingmenu"><span id="menuwifisecurity5G">Multiple SSID setting </span></a></td></tr>
+	 <tr><td id="menu13" class="bodysettingmenu" onmousedown="atelDown(this);clickstainfomenu()"><a id="a13" class="bodysettingmenu"><span id="menuwirelessstatistics">Wireless Statistics</span></a></td></tr>
+	<tr><td id="menu5" class="bodysettingmenu" onmousedown="atelDown(this);clickwpsmenu()"><a id="a5" class="bodysettingmenu"><span id="menuwps">WPS Settings</span></a></td></tr>
+	<tr style="display:none"><td id="menu5G" class="bodysettingmenu" onmousedown="atelDown(this);clickwps5gmenu()"><a id="a5g" class="bodysettingmenu"><span id="menuwps5g">5G WPS Settings</span></a></td></tr>
+	<tr><td id="menu7" class="bodysettingmenu" onmousedown="atelDown(this);clickupdatefwmenu()"><a id="a7" class="bodysettingmenu"><span id="menufirmwareupload">Local Upgrade</span></a></td></tr>
+	<tr><td id="menu8" class="bodysettingmenu" onmousedown="atelDown(this);clickremoteupdatemenu()"><a id="a8" class="bodysettingmenu"><span id="menuremoteupload">Remote Upgrade</span></a></td></tr>
+	<tr style="display:none"><td id="menu9" class="bodysettingmenu" onmousedown="atelDown(this);clickfactorymenu()"><a id="a9" class="bodysettingmenu"><span id="menufactoryrestore">Factory Reset</span></a></td></tr>
+    <tr style="display:none"><td id="menu10" class="bodysettingmenu" onmousedown="atelDown(this);clickoduclick()"><a id="a10" class="bodysettingmenu"><span id="menuodu">ODU Settings</span></a></td></tr>
+    <tr style="display:none"><td id="menu11" class="bodysettingmenu" onmousedown="atelDown(this);clickAutouploadclick()"><a id="a11" class="bodysettingmenu"><span id="menuAutoupload">Auto Upload</span></a></td></tr>
+	<tr><td id="menu12" class="bodysettingmenu" onmousedown="atelDown(this);clickadvancemenu()"><a id="a12" class="bodysettingmenu"><span id="menuadvance">Advance Settings</span></a></td></tr>
+	<tr><td id="menu26" class="bodysettingmenu" onmousedown="atelDown(this);clickmacfilteringmenu()"><a id="a26" class="bodysettingmenu"><span id="menuMACfilter">MAC Filtering</span></a></td></tr>
+	<tr><td id="menu15" class="bodysettingmenu" onmousedown="atelDown(this);clickportfilteringmenu()"><a id="a15" class="bodysettingmenu"><span id="menuMACIPPortfilter">IP/Port Filtering</span></a></td></tr>
+	<tr><td id="menu20" class="bodysettingmenu" onmousedown="atelDown(this);clickcontentfilteringmenu()"><a id="a20" class="bodysettingmenu"><span id="menuContentFiltering">Content Filtering</span></a></td></tr>
+    <tr><td id="menu16" class="bodysettingmenu" onmousedown="atelDown(this);clickportforwardmenu()"><a id="a16" class="bodysettingmenu"><span id="menuportforwarding">Port Forwarding</span></a></td></tr>
+	<tr><td id="menu27" class="bodysettingmenu" onmousedown="atelDown(this);clickvirtualservermenu()"><a id="a27" class="bodysettingmenu"><span id="menuvirtualserver">Virtual Server </span></a></td></tr>
+	<tr><td id="menu44" class="bodysettingmenu" onmousedown="atelDown(this);clickvpnpassmenu()"><a id="a44" class="bodysettingmenu"><span id="menuvpnpassthrough">VPN Passthrough</span></a></td></tr>
+	<tr style="display:none"><td id="menu_vpn_gre" class="bodysettingmenu" onmousedown="atelDown(this);click_vpn_gre_menu()"><a id="a_vpn_gre" class="bodysettingmenu"><span id="menu_vpn_gre_span_id">GRE VPN</span></a></td></tr>
+    <tr><td id="menu17" class="bodysettingmenu" onmousedown="atelDown(this);clickdmzmenu()"><a id="a17" class="bodysettingmenu"><span id="menudmz">DMZ</span></a></td></tr>
+    <tr style="display:none"><td id="menu18" class="bodysettingmenu" onmousedown="atelDown(this);clickipmacbindingmenu()"><a id="a18" class="bodysettingmenu"><span id="menuIPMACBinding">IP/MAC Binding</span></a></td></tr>
+    <tr><td id="menu21" class="bodysettingmenu" onmousedown="atelDown(this);clickddnsmenu()"><a id="a21" class="bodysettingmenu"><span id="menuddns">DDNS</span></a></td></tr>
+    <tr style="display:none"><td id="menu14" class="bodysettingmenu" onmousedown="atelDown(this);clickroutingmenu()"><a id="a14" class="bodysettingmenu"><span id="menurouting">Routing</span></a></td></tr>
+    <tr style="display:none"><td id="menu25" class="bodysettingmenu" onmousedown="atelDown(this);clicksyslogmenu()"><a id="a25" class="bodysettingmenu"><span id="menusyslog">System Log</span></a></td></tr>
+    <tr><td id="menu24" class="bodysettingmenu" onmousedown="atelDown(this);clickdiagnosticmenu()"><a id="a24" class="bodysettingmenu"><span id="menuDiagnostic">Diagnostic</span></a></td></tr> 
+    <tr><td id="menu22" class="bodysettingmenu" onmousedown="atelDown(this);clicksettingsmenu()"><a id="a22" class="bodysettingmenu"><span id="menuBackupRestore">Backup &amp; Restore</span></a></td></tr>   
+    <tr><td id="menu19" class="bodysettingmenu" onmousedown="atelDown(this);clicksyssecuritymenu()"><a id="a19" class="bodysettingmenu"><span id="menusyssecurity">Remote Management</span></a></td></tr>
+    <tr><td id="menu34" class="bodysettingmenu" onmousedown="atelDown(this);clicksysUPNPmenu()"><a id="a34" class="bodysettingmenu"><span id="menuUPNP">UPnP</span></a></td></tr>
+        <tr><td id="menu46" class="bodysettingmenu" onmousedown="atelDown(this);clicksysIGMPmenu()"><a id="a46" class="bodysettingmenu"><span id="menuIGMP">IGMP</span></a></td></tr>
+    <tr style="display:none"><td id="menu23" class="bodysettingmenu" onmousedown="atelDown(this);clickrebootmenu()"><a id="a23" class="bodysettingmenu"><span id="menuReboot">Reboot</span></a></td></tr>
+	<tr><td id="menu6" class="bodysettingmenu" onclick="atelDown(this);clickntpmenu()"><a id="a6" class="bodysettingmenu"><span id="menuntp">NTP</span></a></td></tr>
+	<tr><td id="menu34b" class="bodysettingmenu" onclick="atelDown(this);clickopenvpnmenu()"><a id="a34b" class="bodysettingmenu"><span id="menuopenvpn">OpenVpn</span></a></td></tr>
+	<tr><td id="menu29" class="bodysettingmenu" onclick="atelDown(this);clickqosmenu()"><a id="a29" class="bodysettingmenu"><span id="menuqos">QoS</span></a></td></tr>
+	<tr><td id="menu36" class="bodysettingmenu" onclick="atelDown(this);clickdynamicqosmenu()"><a id="a36" class="bodysettingmenu"><span id="menudynamicqos">DQoS</span></a></td></tr>
+	<tr><td id="menu37" class="bodysettingmenu" onmousedown="atelDown(this);clicksetwifiguestmenu();"><a id="a37" class="bodysettingmenu"><span>Wi-Fi Guest</span></a></td></tr>
+	<tr style="display:none"><td id="menu38" class="bodysettingmenu" onmousedown="atelDown(this);clicksetConManagementmenu();"><a id="a38" class="bodysettingmenu"><span>Connection Time Management</span></a></td></tr>
+	<tr><td id="menu39" class="bodysettingmenu" onmousedown="atelDown(this);clickvlanmenu()"><a id="a39" class="bodysettingmenu"><span id="vlanmenu">VLAN Settings</span></a></td></tr>
+	<tr><td id="menu_vlan_dhcp" class="bodysettingmenu" onmousedown="atelDown(this);clickvlan_dhcpmenu()"><a id="a_vlan_dhcp" class="bodysettingmenu"><span id="vlan_dhcpmenu">VLAN DHCP Settings</span></a></td></tr>
+	<tr><td id="menu_vlanIsolate" class="bodysettingmenu" onmousedown="atelDown(this);clickvlan_isolatemenu()"><a id="a_vlanIsolate" class="bodysettingmenu"><span id="vlan_isolationmenu">VLAN Isolation</span></a></td></tr>
+	<tr><td id="menu40" class="bodysettingmenu" onmousedown="atelDown(this);clickwifi_vlanmenu()"><a id="a40" class="bodysettingmenu"><span id="wifi_vlanmenu">Wi-Fi Isolation</span></a></td></tr>
+	<tr><td id="menu_pldt_iptv" class="bodysettingmenu" onmousedown="atelDown(this);clickpldt_iptvmenu()"><a id="a_pldtIptv" class="bodysettingmenu"><span id="pldtIptvmenu">PLDT IPTV</span></a></td></tr>
+	<tr><td id="menuParentCtrl" class="bodysettingmenu" onmousedown="atelDown(this);clickParentCtrlMenu()"><a id="parentCtrl" class="bodysettingmenu"><span id="parentCtrlMenu">Parent Ctrl</span></a></td></tr>
+	<tr><td id="menu30" class="bodysettingmenu" onmousedown="atelDown(this);clickltemenu();"><a id="a30" class="bodysettingmenu"><span id="menulte">LTE Settings</span></a></td></tr>
+	
+	<tr><td id="menu30b" class="bodysettingmenu" onmousedown="atelDown(this);clickbandmenu();"><a id="a30b" class="bodysettingmenu"><span id="ltebandmenu">Frequency selection</span></a></td></tr>
+	<tr><td id="menu31" class="bodysettingmenu" onmousedown="atelDown(this);clickapnmenu();"><a id="a31" class="bodysettingmenu"><span id="lteapnmenu">APN Settings</span></a></td></tr>
+	<tr><td id="menu32" class="bodysettingmenu" onmousedown="atelDown(this);clicknetworkmenu()"><a id="a32" class="bodysettingmenu"><span id="ltenetworkmenu">Network</span></a></td></tr>
+	<tr><td id="menu33" class="bodysettingmenu" onmousedown="atelDown(this);clickpinmenu()"><a id="a33" class="bodysettingmenu"><span id="ltepinmenu">PIN Management</span></a></td></tr>
+</tbody></table>
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
